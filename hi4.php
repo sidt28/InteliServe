@@ -247,8 +247,8 @@ include("auth_session.php");
             
             <canvas id="myChart" style="width:100%; height:10px; margin-top: 15px;" class="w3-padding-10"></canvas>
             <script>
-              var xValues = [50,60,70,80,90,100,110,120,130,140,150];
-              var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+              var xValues = [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010];
+              var yValues = [723,731,753,753,779,756,749,764,748,746];
 
               new Chart("myChart", 
               {
@@ -263,7 +263,6 @@ include("auth_session.php");
                       backgroundColor: "rgba(0,0,0)",
                       borderColor: "rgba(0,0,255,1)",
                       data: yValues,
-                      Color
                   }]
                 },
                 options: 
@@ -273,6 +272,7 @@ include("auth_session.php");
                   {
                     yAxes: 
                     [{
+                      
                       ticks: 
                       {
                         fontColor: "white",
@@ -295,18 +295,10 @@ include("auth_session.php");
         </div>
         <br/>
         <!--Section two -->
-        <h5>
-          <b>
-            <i class="fa fa-dashboard" style=" color: #edebeb;"></i>
-            <span style=" color: #edebeb;">
-              My Dashboard
-            </span>
-          </b>
-        </h5>
         <!-- graph 2 -->
         <div class="row">
         <div class="col-sm-4">
-        <div class="card">   
+        <div class="card" style="background-color: #b11265d8;">   
           <div class="container">
           <div id="piechart" style="margin-left: -130px ;"></div>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -318,12 +310,11 @@ include("auth_session.php");
             // Draw the chart and set the chart values
             function drawChart() {
               var data = google.visualization.arrayToDataTable([
-              ['Task', 'Hours per Day'],
-              ['Work', 8],
-              ['Eat', 2],
-              ['TV', 4],
-              ['Gym', 2],
-              ['Sleep', 8]
+              ['Crime', 'Number of records'],
+              ['Rape', 1050],
+              ['Murder', 1018],
+              ['Theft', 1865],
+              ['Kidnap', 3569]
             ]);
 
               // Optional; add a title and set the width and height of the chart
@@ -341,7 +332,7 @@ include("auth_session.php");
         </div>
         <!-- map -->
         <div class="col-sm-4">
-        <div class="card">   
+        <div class="card" style="background-color: #790fc0d8; width:350px;">  
           <div class="container">
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1CPmoWaq6ZV4I9JszuALq2UCXs1ugtFQ&ehbc=2E312F" width="300px" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
     
@@ -353,9 +344,9 @@ include("auth_session.php");
  
           <!-- box three -->
         <div class="col-sm-4">
-        <div class="card">   
+        <div class="card" style="margin-right: 350px; width:350px;background-color: #fc0000a1;">   
           <div class="container">
-            <div id="barchart_material" style="width: 350px; height: 200px;"></div>
+            <div id="barchart_material" style="width: 300px; height: 200px;"></div>
           </div>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script type="text/javascript">
@@ -376,7 +367,26 @@ include("auth_session.php");
                   
                 },
                 bars: 'vertical',
-                backgroundColor: 'transparent' // Required for Material Bar Charts.
+                backgroundColor: 'transparent',
+                scales: 
+                  {
+                    yAxes: 
+                    [{
+                      ticks: 
+                      {
+                        fontColor: "white",
+                        fontSize: 18,
+                      }
+                    }],
+                    xAxes: 
+                    [{
+                      ticks: 
+                      {
+                        fontColor: "white",
+                        fontSize: 14,
+                      }
+                    }]
+                  } // Required for Material Bar Charts.
               };
 
               var chart = new google.charts.Bar(document.getElementById('barchart_material'));
