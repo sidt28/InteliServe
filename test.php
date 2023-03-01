@@ -10,8 +10,8 @@ if(isset($_SESSION['username'])){
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<script type="text/javascript" src="style.js"></script>
+<link rel="stylesheet" href="files/style.css">
+<script type="text/javascript" src="files/style.js"></script>
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body{
