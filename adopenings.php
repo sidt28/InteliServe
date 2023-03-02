@@ -153,7 +153,7 @@ include("auth_session.php");
         <div class="w3-bar-block">
           <a href="#dash" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
           <a href="hi4.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Overview</a>
-          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding  w3-blue" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Openings</a>
+          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding  w3-blue" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Filter</a>
           <a href="update.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Update</a>
           <a href="logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Logout</a><br><br>
         </div>
@@ -172,18 +172,12 @@ include("auth_session.php");
       <header class="tabcontent" style="padding-top:22px" id="dash">
         <div class="row">
             <div class="col-md-12" style="width: 1280px;" >
-              <div class="card">
+              <div class="card" style="background-color: black;">
                 <form action="" method="GET">
                   <!-- <div class="input-group mb-3"> -->
-                  <div class="col-md-5">
-                    <input style="width: 450px;" type="text" style="width:510px;" class="login-input" name="username" placeholder="Username" autofocus="true" required>                                  
-                  </div>
-                  <div class="col-md-5">
-                    <input type="text" style="width: 450px;" class="login-input" name="username" placeholder="Username" autofocus="true" required>      
-                  </div>
-                  <button style=" background-color:transparent; padding-top:5px;" type="submit"> 
-                  <i class="fa fa-search" style="font-size:36px"></i>
-                </button>  
+                  <div class="col-md-11">
+                  <input type="text" name="profile" value="<?php if(isset($_GET['id'])){echo $_GET['id'];} ?>" class="form-control login-input" placeholder="case-ID" id="profile-input">                       
+                  </div><button style=" background-color:transparent; padding-top:5px;" type="submit"><i class="fa fa-search" style="font-size:36px"></i> </button>
                 </form>
               </div>
             </div>
@@ -201,7 +195,7 @@ include("auth_session.php");
                             <h6>Filter</h6>
                             <hr>
                             <?php
-                                $con = mysqli_connect("localhost","root","12345","placement");
+                                $con = mysqli_connect("localhost","root","12345","blockchain");
 
                                 $brand_query = "SELECT * FROM a_brands";
                                 $brand_query_run  = mysqli_query($con, $brand_query);
@@ -247,11 +241,11 @@ include("auth_session.php");
                                                         <thead>
                                                             <tr>
                                                                 <th>ID</th>
-                                                                <th>Company Name</th>
-                                                                <th>CGPA</th>
-                                                                <th>Back Log</th>
-                                                                <th>Package</th>
-                                                                <th>SEX</Address></th>
+                                                                <th>Area</th>
+                                                                <th>Crime</th>
+                                                                <th>File</th>
+                                                                <th>Year</th>
+                                                                <th>Status</Address></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -272,11 +266,11 @@ include("auth_session.php");
                                             ?>
                                             
                                                                 <th><?= $proditems['id']; ?></th>
+                                                                <th><?= $proditems['brand_id']; ?></th>
                                                                 <th><?= $proditems['name']; ?></th>
-                                                                <th><?= $proditems['cgpa']; ?></th>
                                                                 <th><?= $proditems['price']; ?></th>
-                                                                <th><?= $proditems['package']; ?></th>
-                                                                <th><?= $proditems['gender']; ?></th>
+                                                                <th><?= $proditems['status']; ?></th>
+                                                                <th><?= $proditems['date']; ?></th>
                                                                 
                                                             </tr>
                                                         
@@ -298,12 +292,12 @@ include("auth_session.php");
                                     foreach($products_run as $proditems) :
                                         ?>
                                          
-                                                                <th><?= $proditems['id']; ?></th>
+                                         <th><?= $proditems['id']; ?></th>
+                                                                <th><?= $proditems['brand_id']; ?></th>
                                                                 <th><?= $proditems['name']; ?></th>
-                                                                <th><?= $proditems['cgpa']; ?></th>
                                                                 <th><?= $proditems['price']; ?></th>
-                                                                <th><?= $proditems['package']; ?></th>
-                                                                <th><?= $proditems['gender']; ?></th>
+                                                                <th><?= $proditems['status']; ?></th>
+                                                                <th><?= $proditems['date']; ?></th>
                                                                 
                                                             </tr>
                                                         

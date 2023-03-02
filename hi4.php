@@ -206,7 +206,7 @@ include("auth_session.php");
         <div class="w3-bar-block">
           <a href="#dash" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
           <a href="hi4.php" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Overview</a>
-          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Openings</a>
+          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Filter</a>
           <!-- <a href="stdet.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'open')"><i class="fa fa-trophy fa-fw"></i>  Student Details</a> -->
           <a href="update.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Update</a>
           <a href="logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Logout</a><br><br>
@@ -222,7 +222,7 @@ include("auth_session.php");
   </div>
 
 <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+<div class="w3-main" style="margin-left:230px;margin-top:43px; margin-right:60px;">
       <header class="tabcontent" style="padding-top:22px" id="dash">
        <!--section one -->  
         <h5>
@@ -300,6 +300,7 @@ include("auth_session.php");
         <div class="col-sm-4">
         <div class="card" style="background-color: #b11265d8;">   
           <div class="container">
+          <h5 style="color:#edebeb"><i class='fas fa-map-marker-alt' style='font-size:24px; color:#edebeb;'>Distinct Crime </i></h5>
           <div id="piechart" style="margin-left: -130px ;"></div>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script type="text/javascript">
@@ -311,14 +312,14 @@ include("auth_session.php");
             function drawChart() {
               var data = google.visualization.arrayToDataTable([
               ['Crime', 'Number of records'],
-              ['Rape', 1050],
+              ['Rape', 2810],
               ['Murder', 1018],
               ['Theft', 1865],
               ['Kidnap', 3569]
             ]);
 
               // Optional; add a title and set the width and height of the chart
-              var options = {backgroundColor: 'transparent', 'width':600, 'height':200, is3D: true,
+              var options = {backgroundColor: 'transparent', 'width':600, 'height':255, is3D: true,
                 legend : { position : 'right' }
               };
 
@@ -333,20 +334,19 @@ include("auth_session.php");
         <!-- map -->
         <div class="col-sm-4">
         <div class="card" style="background-color: #790fc0d8; width:350px;">  
+
           <div class="container">
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1CPmoWaq6ZV4I9JszuALq2UCXs1ugtFQ&ehbc=2E312F" width="300px" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-    
-
+          <h5 style="color:#edebeb"><i class='fas fa-map-marker-alt' style='font-size:24px; color:#edebeb;'>Accessed Location</i></h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8590711634333!2d77.33079511455752!3d28.54395539483632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44e80a9461b%3A0x302ec8d3d5cb8d1a!2sAmity%20University%20Noida!5e0!3m2!1sen!2sin!4v1632862440169!5m2!1sen!2sin" width="320" height="247" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
         </div>
         </div>
-        </div>
-
- 
           <!-- box three -->
-        <div class="col-sm-4">
-        <div class="card" style="margin-right: 350px; width:350px;background-color: #fc0000a1;">   
+        <div class="col-sm-3">
+        <div class="card" style="width:400px;background-color: #fc0000a1;">   
           <div class="container">
-            <div id="barchart_material" style="width: 300px; height: 200px;"></div>
+          <h5 style="color:#edebeb"><i class='fas fa-map-marker-alt' style='font-size:24px; color:#edebeb;'>Distinct Crimes vs Year</i></h5>
+            <div id="barchart_material" style="width: 380px; height: 250px;"></div>
           </div>
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
           <script type="text/javascript">
@@ -355,11 +355,10 @@ include("auth_session.php");
 
             function drawChart() {
               var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses', 'Profit'],
-                ['2014', 1000, 400, 200],
-                ['2015', 1170, 460, 250],
-                ['2016', 660, 1120, 300],
-                ['2017', 1030, 540, 350]
+                ['Year', 'Rape', 'Kidnap', 'Theft + Murder'],
+                ['2001-2003', 953, 1018, 1154,],
+                ['2004-2007', 900, 1478, 935],
+                ['2008-2011', 957, 1073, 794]
               ]);
 
               var options = {

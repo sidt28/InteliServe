@@ -336,7 +336,7 @@ include("auth_session.php");
         <div class="w3-bar-block">
           <a href="#dash" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
           <a href="hi4.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Overview</a>
-          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Openings</a>
+          <a href="adopenings.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'dash')"><i class="fa fa-joomla fa-fw"></i>  Filter</a>
           <!-- <a href="stdet.php" class="w3-bar-item w3-button w3-padding" class="tablinks" onclick="openCity(event, 'open')"><i class="fa fa-trophy fa-fw"></i>  Student Details</a> -->
           <a href="update.php" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bullseye fa-fw"></i>  Update</a>
           <a href="logout.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Logout</a><br><br>
@@ -355,7 +355,7 @@ include("auth_session.php");
     <div class="w3-main" style="margin-left:250px;margin-top:43px;">
       <header class="tabcontent" style="padding-top:22px" id="dash">
        <!--section one -->  
-       <iframe src="files/t1.php" height="700px" width="1230px" title="Iframe Example"></iframe>
+       <iframe src="files/t1.php" height="700px" width="1130px" title="Iframe Example"></iframe>
 
       </header>
     </div>

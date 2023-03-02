@@ -108,10 +108,10 @@ body, html {height: 563px;}
           <br/>
           
               <label for="uname" style="color:aliceblue"><b>Username : </b></label>
-              <input type="text" style="width:600px;" class="login-input" name="username" placeholder="Username" autofocus="true" required>
+              <input type="text" style="width:500px;" class="login-input" name="username" placeholder="Username" autofocus="true" required>
               <br/>
                 <label for="psw" style="color:aliceblue"><b>Password : </b></label>
-                    <input type="password" style="width:600px;" class="login-input" name="password" placeholder="Password"/>
+                    <input type="password" style="width:500px;" class="login-input" name="password" placeholder="Password"/>
               </div>
                     <button type="submit" style="background-color: indigo;" class="cen">Submit</button>
                     <br>
